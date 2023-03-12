@@ -1,0 +1,28 @@
+app:
+  name: "bluebell_blogs"
+  mode: "dev"
+  port: 8080
+  start_time: "2023-1-1"
+  machine_id: 1
+
+log:
+  level: "debug"
+  filename : "bluebell_blogs.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+
+mysql:
+  host: "127.0.0.1"
+  port: 3308
+  user: "root"
+  password: 123123
+  dbname: "bluebell_blogs"
+  max_open_conns: 20
+  max_idle_conns: 10
+
+redis:
+  addr: "localhost:6379"
+  password: "123123"
+  db: 0
+  poolsize: 10
