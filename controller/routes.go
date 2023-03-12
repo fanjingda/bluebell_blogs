@@ -2,6 +2,7 @@ package controller
 
 import (
 	"bluebell_blogs/models/common"
+	"bluebell_blogs/pkg/RateLimit"
 	"bluebell_blogs/pkg/jwt"
 	"bluebell_blogs/pkg/logger"
 	"github.com/gin-gonic/gin"
@@ -27,6 +28,7 @@ func Setup() *gin.Engine {
 	}
 	community := r.Group("/community/")
 	community.Use(jwt.JWTAuthMiddleware())
+	community.Use(RateLimit.RateLimitMiddleware(2, 1))
 	{
 		community.POST("/list", CommunityHandler)
 		community.POST("/list/:id", CommunityDetailHandler)
