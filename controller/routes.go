@@ -38,6 +38,7 @@ func Setup() *gin.Engine {
 		community.GET("/posts", GetPostListHandler)
 		community.GET("/posts2", GetPostListHandler2)
 
+		community.POST("/vote", PostVoteController)
 	}
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
