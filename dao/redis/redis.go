@@ -2,6 +2,7 @@ package redis
 
 import (
 	"bluebell_blogs/settings"
+	"fmt"
 	"go.uber.org/zap"
 
 	"github.com/go-redis/redis"
@@ -14,7 +15,7 @@ var (
 
 func Init(cfg *settings.RedisConfig) (err error) {
 	client = redis.NewClient(&redis.Options{
-		Addr:     cfg.Addr,
+		Addr:     fmt.Sprintf("%s:%d", cfg.Host, cfg.Port),
 		Password: cfg.Password,
 		DB:       cfg.DB,
 		PoolSize: cfg.Poolsize,

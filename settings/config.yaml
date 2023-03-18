@@ -13,8 +13,8 @@ log:
   max_backups: 7
 
 mysql:
-  host: "127.0.0.1"
-  port: 3308
+  host: bluebell_mysql
+  port: 3306
   user: "root"
   password: 123123
   dbname: "bluebell_blogs"
@@ -22,7 +22,8 @@ mysql:
   max_idle_conns: 10
 
 redis:
-  addr: "localhost:6379"
+  host: myredis
+  port: 6379
   password: "123123"
   db: 0
   poolsize: 10

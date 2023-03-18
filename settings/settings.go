@@ -39,7 +39,8 @@ type MySQlConfig struct {
 	MaxIdleConns int    `mapstructure:"max_idle_conns"`
 }
 type RedisConfig struct {
-	Addr     string `mapstructure:"addr"`
+	Host     string `mapstructure:"host"`
+	Port     int    `mapstructure:"post"`
 	Password string `mapstructure:"password"`
 	DB       int    `mapstructure:"db"`
 	Poolsize int    `mapstructure:"poolsize"`
