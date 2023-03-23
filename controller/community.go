@@ -111,7 +111,7 @@ func GetPostListHandler(c *gin.Context) {
 	common.ResponseSuccess(c, data)
 }
 
-// GetPostListHandler2 升级版帖子列表接口
+// GetPostListHandler2 帖子列表接口
 // 根据前端穿传过来的参数动态的获取帖子列表
 // 按照创建 时间 排序或者按照 分数 排序
 func GetPostListHandler2(c *gin.Context) {
