@@ -40,8 +40,6 @@ func Setup() *gin.Engine {
 		community.POST("/list/:id", CommunityDetailHandler)
 		community.POST("/post", CreatePostHandler)
 		community.GET("/post/:id", GetPostDetailHandler)
-		//根据时间或分数获取帖子列表
-		community.GET("/posts", GetPostListHandler)
 
 		community.POST("/vote", PostVoteController)
 	}
